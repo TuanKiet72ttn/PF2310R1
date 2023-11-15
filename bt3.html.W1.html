@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đơn giản</title>
+    <style>
+        h1 {
+            font-weight: bolder;
+            color: white;
+            background-color: orange;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <form action="formdangky.html" method="get">
+        <h1>SỞ THÍCH CỦA BẠN</h1> <br>
+        Họ và tên: <input type="text" name="yourname"> <br>
+        Email: <input type="email" name="email"> <br>
+        Sở thích:
+        <input type="checkbox" name="hobby" value="Thể thao"> Thể thao 
+        <input type="checkbox" name="hobby" value="Âm nhạc"> Âm nhạc 
+        <input type="checkbox" name="hobby" value="Đọc sách"> Đọc sách <br>
+        <input type="checkbox" name="hobby" value="Lướt web"> Lướt Web 
+        <input type="checkbox" name="hobby" value="Chơi game"> Chơi game 
+        <input type="checkbox" name="hobby" value="Điện ảnh"> Điện ảnh <br>
+        <input type="checkbox" name="hobby" value="Du lịch"> Du lịch <br>
+        <input type="button" value="Gửi thông tin">
+        <input type="button" value="Nhập lại">
+    </form>
+</body>
+</html>
+
+-----------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đăng ký học viên</title>
+    <style>
+        form{
+            background-color: yellow;
+        };
+        h1{
+            font-weight: bolder;
+            color: blue;
+            background-color:greenyellow;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <form action="dangkyhocvien.html" method="get">
+        <h1>Đăng Ký Học Viên</h1> <br>
+        Họ và tên: <input type="text" name="yourname" id="yourname"> <br>
+        Ngày sinh: <input type="date" name="birthday" id="birthday"> <br>
+        Giới tính:
+            <input type="button" value="Nam">
+            <input type="button" value="Nữ"> <br>
+        Địa chỉ: <input type="text" name="location" id="location"> <br>
+        Lớp: 
+        <Select name="-Chọn Lớp-">
+            <option value="PF2310R1"></option>
+            <option value="PF2311R1"></option>
+            <option value="PF2312R1"></option>
+        </Select> <br>
+        Email: <input type="email" name="email" id="email"> <br>
+        Điện thoại: <input type="number" name="Phone" id="Phone"> <br>
+        <input type="button" value="Đăng ký">
+        <input type="button" value="Nhập lại">
+    </form>
+</body>
+</html>
