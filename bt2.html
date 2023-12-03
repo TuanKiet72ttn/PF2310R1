@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm Đại học khối D</title>
+</head>
+<body>
+    <h2> Tính điểm Đại học khối D</h2>
+    Môn toán: <input type="number" id="toán"><br>
+    Môn Văn: <input type="number" id="văn"><br>
+    Môn Anh: <input type="number" id="anh"><br>
+    Khu vực: <select name="region" id="region">
+        <option value="KV1">KV1</option>
+        <option value="KV2">KV2</option>
+        <option value="KV2-NT">KV2-NT</option>
+        <option value="KV3">KV3</option>
+    </select> <br>
+
+    <button type="button" onclick="KQ()">Tính điểm</button>
+
+    <script>
+        function KQ() {
+            let diemtoan = parseFloat(document.getElementById("toán").value);
+            let diemvan = parseFloat(document.getElementById("văn").value);
+            let diemanh = parseFloat(document.getElementById("anh").value);
+
+            let khuvuc = document.getElementById("region").value;
+            let diemkhuvuc;
+            
+            switch (khuvuc) {
+                case "KV1":
+                    diemkhuvuc = 0.75;
+                    break;
+                case "KV2-NT":
+                    diemkhuvuc = 0.5;
+                    break;
+                case "KV2":
+                    diemkhuvuc = 0.25;
+                    break;
+                case "KV2-NT":
+                    diemkhuvuc = 0;
+                    break;
+            }
+            let Tong_diem = diemtoan + diemvan + diemanh + diemkhuvuc;
+            document.write("TỔNG ĐIỂM ĐH KHỐI D của bạn là:  " + Tong_diem)
+        }
+    </script>
+</body>
+</html>
