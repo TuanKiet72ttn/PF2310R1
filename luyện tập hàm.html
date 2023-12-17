@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Bai1()">Bài 1</button>
+    <button onclick="Bai2()">Bài 2</button>
+    <button onclick="Bai3()">Bài 3</button>
+    <button onclick="Bai4()">Bài 4</button>
+    <button onclick="Bai5()">Bài 5</button>
+    <button onclick="Bai6()">Bài 6</button>
+    <button onclick="Bai7()">Bài 7</button>
+    <button onclick="Bai8()">Bài 8</button>
+    <button onclick="Bai9()">Bài 9</button>
+    <button onclick="Bai10()">Bài 10</button>
+</body>
+<script>
+    // Bài 1
+    function Bai1() {
+        let num1 = parseFloat(prompt("nhập 1 số bất kỳ: "));
+        let num2 = parseFloat(prompt("nhập 1 số bất kỳ: "));
+        if (num1 <= num2) {
+            let sum = num1 + num2;
+            alert("Tổng 2 tham số: " + sum)
+        } else {
+            alert("Hãy nhập lại 2 tham số trên")
+        }
+    }
+    // Bài 2
+    function Bai2() {
+        let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+        let arr2 = [ "Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" , "Leo"]
+        function findConstellation(starName) {
+            for (let i = 0; i < arr1.length; i++) {
+                if (arr1[i] === starName) {
+                    return constellations[i];
+                }
+            }
+            return null;
+        }
+        let userInput = prompt("Nhập tên ngôi sao:");
+        let constellation = findConstellation(userInput);
+
+        if (constellation !== null) {
+            alert("Ngôi sao " + userInput + " thuộc chòm sao " + constellation);
+        } else {
+            alert("Không tìm thấy thông tin về ngôi sao " + userInput);
+        }
+    }
+    // Bài 3
+    function Bai3() {
+        let num = prompt("nhập 1 số bất kỳ: ");
+        let square = sum * sum ;
+        alert("Bình phuong số bạn vùa nhập: " + square);
+    }
+    // Bài 4
+    function Bai4() {
+        let R = prompt("nhập bán kính hình tròn: ");
+        const Pi = Math.PI;
+        function ChuVi(R) {
+            return 2 * Pi * R;
+        }
+        function DienTich(R) {
+            return Pi * R * R;
+        }
+    }
+    // Bài 5
+    function Bai5() {
+        function TinhGiaiThua(num) {
+            if (num === 0 || num === 1) {
+                return 1;
+            } else {
+                let a = 1;
+                for (let i = 1; i <= num; i++) {
+                    a *= i;
+                }
+            }   return a;
+        }
+
+    let num = parseInt(prompt("Nhập số giai thùa cần tính: "));
+    if (!isNaN(num) && num >= 0) {
+            let result = TinhGiaiThua(num);
+            alert("Giai thừa của " + num + " là: " + result);
+        } else {
+            alert("Vui lòng nhập một số nguyên dương hợp lệ.");
+        }
+    }
+    // Bài 6
+    function Bai6() {
+        function isNumber(str) {
+            return !isNaN(parseFloat(str)) && isFinite(str);
+        }
+
+        let str = prompt("nhập vào 1 ký tụ bất kỳ: ");
+        if (str.length === 1) {
+            if (isNumber(str)) {
+                alert("Ký tự " + str + " là số.");
+            } else {
+                alert("Ký tự " + str + " không phải là số.");
+            }
+        } else {
+            alert("Vui lòng chỉ nhập một ký tự.");
+        }
+    }
+
+    // Bài 7
+    function Bai7() {
+        
+        let arr = [];
+        
+        function min() {
+            for (let i = 0; i < arr.length; i++) {
+                let min = arr[0];
+                if (arr[i] < min) {
+                    min = arr[i];
+                } else {
+                    return min
+                }
+            }
+        }
+        for (let i = 0, i < 3; i++) {
+            let inputNum = parseFloat(prompt("nhập số thú " + (i+1) + ": "));
+            let arr = arr.push(inputNum)
+        }
+    }
+    // Bài 8
+    function Bai8() {
+        let num = parseInt(prompt("nhập vào 1 số nguyên bất kỳ: "));
+        if (num > 0) {
+            alert(num + " là số nguyên duong.")
+        } else {
+            alert(num + " không phải là số nguyên duong")
+        }
+    }
+
+    // Bài 9
+    function Bai9() {
+        function reverseArray(arr) {
+            return arr.reverse();
+        }
+        let arr1 = [1,2,3,4,5]
+        alert("Mảng ban đầu: " + arr1);
+        let reversedarr1 = reverseArray(arr1.slice());
+        alert("Mảng sau khi đảo ngược: " + reversedNumbers);
+    }
+    // Bài 10
+    function Bai10() {
+        let arr = [1,2,3,5,"a","b","c","d"]
+        function checkArr() {
+            let X = prompt("nhập vào 1 ký tụ bất kỳ: ");
+            for (let i = 0; i < arr.length; i++){
+                if (X == arr[i]) {
+                    alert("số thú tụ ký tụ đó là: " + i);
+                } else {
+                    alert(-1);
+                }
+            }
+        }
+    }
+</script>
+</html>
