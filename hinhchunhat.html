@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle</title>
+</head>
+<body>
+    <canvas id="rectangleCanvas" width="400" height="300" style="border:1px solid #000;"></canvas>
+    <script>
+        class Rectangle {
+            constructor(length, width) {
+                this.length = length;
+                this.width = width;
+            }
+            getlength() {
+                return this.length;
+            }
+            getwidth() {
+                return this.width;
+            }
+            getArea() {
+                return this.length * this.width;
+            }
+            getPerimeter() {
+                return 2 * (this.length + this.width);
+            }
+
+            drawRectangle() {
+                var canvas = document.getElementById("rectangleCanvas");
+                var ctx = canvas.getContext("2d");
+                ctx.clearRect(0, 0, canvas.length, canvas.width);
+                ctx.fillRect(50, 50, this.length, this.width);
+            }
+        }
+
+        let myRectangle = new Rectangle(100, 50);
+        myRectangle.drawRectangle();
+
+        myRectangle.length = 150;
+        myRectangle.width = 75;
+        myRectangle.drawRectangle();
+
+        console.log('Diện tích của hình chữ nhật là:', myRectangle.getArea());
+        console.log('Chu vi của hình chữ nhật là:', myRectangle.getPerimeter());
+    </script>
+</body>
+</html>
