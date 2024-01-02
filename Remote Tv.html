@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote TV</title>
+</head>
+<body>
+    <script>
+        class Remote {
+            constructor(code) {
+                this.code = code;
+            }
+
+            // Phương thức điều khiển chuyển kênh của TiVi
+            controlChannel(tv, channel) {
+                tv.changeChannel(channel);
+            }
+
+            // Phương thức điều khiển âm lượng của TiVi
+            controlVolume(tv, amount) {
+                tv.adjustVolume(amount);
+            }
+
+            // Phương thức bật/tắt TiVi
+            power(tv, state) {
+                if (state === 'on') {
+                tv.turnOn();
+                } else if (state === 'off') {
+                tv.turnOff();
+                }
+            }
+        }
+
+            // Lớp TiVi
+            class TiVi {
+            constructor() {
+                this.channel = 0;
+                this.volume = 0;
+                this.powerState = 'off';
+            }
+
+            // Phương thức chuyển đổi kênh
+            changeChannel(channel) {
+                this.channel = channel;
+                console.log(`Chuyển đến kênh ${channel}`);
+            }
+
+            // Phương thức điều chỉnh âm lượng
+            adjustVolume(amount) {
+                this.volume += amount;
+                console.log(`Âm lượng: ${this.volume}`);
+            }
+
+            // Phương thức bật TiVi
+            turnOn() {
+                this.powerState = 'on';
+                console.log('TiVi được bật');
+            }
+
+            // Phương thức tắt TiVi
+            turnOff() {
+                this.powerState = 'off';
+                console.log('TiVi được tắt');
+            }
+        }
+
+            // Kịch bản điều khiển TiVi sử dụng Remote
+            const myTV = new TiVi();
+            const myRemote = new Remote('123');
+
+            // Bật TiVi
+            myRemote.power(myTV, 'on');
+
+            // Chuyển đến kênh 7
+            myRemote.controlChannel(myTV, 7);
+
+            // Sử dụng remote chuyển đến kênh 3
+            myRemote.controlChannel(myTV, 3);
+
+            // Tăng âm lượng lên 2 đơn vị
+            myRemote.controlVolume(myTV, 2);
+
+            // Sử dụng remote tắt TiVi
+            myRemote.power(myTV, 'off');
+    </script>
+</body>
+</html>
